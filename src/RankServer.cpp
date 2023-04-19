@@ -25,7 +25,9 @@ void RankServer::load()
     std::vector<std::string> files;
     for (const auto& dirEntry : dir_iter(mDataDir))
     {
-        std::string dirEntryStr = (std::stringstream() << dirEntry).str();
+        std::stringstream ss;
+        ss << dirEntry;
+        std::string dirEntryStr = ss.str();
         std::string fileStr     = "";
         for (unsigned int i = dirEntryStr.size(); i > 0; i--)
         {
